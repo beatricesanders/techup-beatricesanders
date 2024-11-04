@@ -60,6 +60,8 @@ function showInput() {
     // check if user is sad 
     if (user_input == "sad") {
         mood_output.style.color = 'blue';
+    } else {
+        mood_output.style.color = 'black';
     }
 }
 
