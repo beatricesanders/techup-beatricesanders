@@ -1,0 +1,28 @@
+.title {
+    color:#388697;
+    background-color: #F4F3EE;
+
+    text-align: left;
+    border: 3px #34252F solid;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    margin-bottom: 100px;
+}.title {
+    color:#388697;
+    background-color: #F4F3EE;
+
+    text-align: left;
+    border: 3px #34252F solid;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    margin-bottom: 100px;
+}
+
+#start_date {
+    color:#72A276;
+}
+
