@@ -51,6 +51,11 @@ app.get('/new', function(req, res) {
     res.render('pages/new');
 });
 
+// New demo page
+app.get('/demo', function(req, res) {
+  res.render('pages/demo');
+});
+
 // Create a new post
 app.post('/new', async function(req, res) {
     
@@ -98,3 +103,4 @@ app.post("/delete/:id", async (req, res) => {
 
 // Tells the app which port to run on
 app.listen(8080);
+
