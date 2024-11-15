@@ -41,7 +41,7 @@ app.get('/', async function(req, res) {
   await nextCard();
   console.log(currentCard);
 
-res.render('pages/demo', { card: currentCard , card_db: card_db});
+res.render('pages/cards', { card: currentCard , card_db: card_db});
 
 });
 
@@ -51,7 +51,7 @@ app.post("", (req, res) => {
 
   nextCard();
 
-  res.render("pages/demo", { card: currentCard , card_db: card_db });
+  res.render("pages/cards", { card: currentCard , card_db: card_db });
 
 });
 
