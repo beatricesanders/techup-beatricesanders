@@ -13,9 +13,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Post model represents individual blog posts
-model Post {
+// Card model represents individual question vards
+model Card {
   id        Int       @id @default(autoincrement())
-  title     String
-  content   String
+  question  String
+  theme     String
+  heat      Int
 }

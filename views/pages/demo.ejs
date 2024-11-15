@@ -3,20 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BLP5YBWJCR"></script>
-<script>
+    <title>Question Cards</title>
+
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLP5YBWJCR"></script>
+    <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-BLP5YBWJCR');
 </script>
+
+    <!-- Link to Custom CSS -->
+    <link href="/styles/qcards.css" rel="stylesheet" />
+
+
 </head>
+
 <body>
-    <h1>Demo page</h1>
-    <p>You’ve just succeeded in creating a new page called demo. Congrats!</h1>
+  <!-- Navbar which can be reused across other pages -->
+  <%- include('../partials/navbar'); %>
+
+  <!-- Cards -->
+  <div class="q-container">
+    <!-- Card 1 -->
+     <div class="q-card">
+       <div class="q-content">
+         <h1 class= "card-q"><%=card.question %></h1>
+       </div>
+       <div class="q-footer">
+         <button class="q-heat-tag"><%=card.heat %></a>
+         <button class="q-theme-tag"><%=card.theme %></a>
+       </div>
+     </div>
+   </div>
+   <button id="play" onClick="nextCard()">Play</button>
+
+   <form action="" method="POST">
+    <input type="submit" value="Generate Name">
+  </form>
+
 </body>
 </html>
 

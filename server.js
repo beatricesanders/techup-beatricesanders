@@ -19,87 +19,47 @@ app.use(express.urlencoded({extended: true}));
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient();
 
-// Main landing page
+// Generate variables for cards and questions
+
+let questions = [];
+let currentCard = {};
+
+// Load card page
+
 app.get('/', async function(req, res) {
 
-    // Try-Catch for any errors
-    try {
-        // Get all blog posts
-        const blogs = await prisma.post.findMany({
-                orderBy: [
-                  {
-                    id: 'desc'
-                  }
-                ]
-        });
-
-        // Render the homepage with all the blog posts
-        await res.render('pages/home', { blogs: blogs });
-      } catch (error) {
-        res.render('pages/home');
-        console.log(error);
-      } 
-});
-
-// About page
-app.get('/about', function(req, res) {
-    res.render('pages/about');
-});
-
-// New post page
-app.get('/new', function(req, res) {
-    res.render('pages/new');
-});
-
-// New demo page
-app.get('/demo', function(req, res) {
-  res.render('pages/demo');
-});
-
-// Create a new post
-app.post('/new', async function(req, res) {
-    
-    // Try-Catch for any errors
-    try {
-        // Get the title and content from submitted form
-        const { title, content } = req.body;
-
-        // Reload page if empty title or content
-        if (!title || !content) {
-            console.log("Unable to create new post, no title or content");
-            res.render('pages/new');
-        } else {
-            // Create post and store in database
-            const blog = await prisma.post.create({
-                data: { title, content },
-            });
-
-            // Redirect back to the homepage
-            res.redirect('/');
-        }
-      } catch (error) {
-        console.log(error);
-        res.render('pages/new');
+  // Get questions 
+  card_db = await prisma.card.findMany({
+    orderBy: [
+      {
+        id: 'desc'
       }
+    ]
+
+  });
+
+  await nextCard();
+  console.log(currentCard);
+
+res.render('pages/demo', { card: currentCard , card_db: card_db});
 
 });
 
-// Delete a post by id
-app.post("/delete/:id", async (req, res) => {
-    const { id } = req.params;
-    
-    try {
-        await prisma.post.delete({
-            where: { id: parseInt(id) },
-        });
-      
-        // Redirect back to the homepage
-        res.redirect('/');
-    } catch (error) {
-        console.log(error);
-        res.redirect('/');
-    }
-  });
+// Get a new question
+
+app.post("", (req, res) => {
+
+  nextCard();
+
+  res.render("pages/demo", { card: currentCard , card_db: card_db });
+
+});
+
+
+async function nextCard() {
+  const randomCard = card_db[Math.floor(Math.random() * card_db.length)];
+  currentCard = randomCard;
+}
 
 // Tells the app which port to run on
 app.listen(8080);
