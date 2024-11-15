@@ -2,6 +2,9 @@
   "name": "techup-sample-blog",
   "version": "1.0.0",
   "description": "Sample Blog webapp for TechUp",
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
