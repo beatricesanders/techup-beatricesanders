@@ -17,7 +17,7 @@
     </script>
 
   <!-- Link to Custom CSS -->
-    <link href="/styles/qcards.css" rel="stylesheet" />
+  <link href="/styles/qcards.css" rel="stylesheet" />
 
 </head>
 
@@ -26,7 +26,7 @@
   <%- include('../partials/navbar'); %>
 
   <!-- Cards -->
-  <div class="q-container">
+  <div class="row">
     <!-- Card 1 -->
      <div class="q-card">
        <div class="q-content">
@@ -62,9 +62,6 @@
 </script>
 
 
-<p hidden>This text should be hidden.</p>
-
-<p id = "testq"><%=card_db[Math.floor(Math.random() * card_db.length)].question %></p>
 
 </body>
 </html>

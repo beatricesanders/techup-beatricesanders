@@ -24,9 +24,14 @@ const prisma = new PrismaClient();
 let questions = [];
 let currentCard = {};
 
+// Home page
+app.get('/', function(req, res) {
+  res.render('pages/home');
+});
+
 // Load card page
 
-app.get('/', async function(req, res) {
+app.get('/cards', async function(req, res) {
 
   // Get questions 
   card_db = await prisma.card.findMany({
