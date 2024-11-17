@@ -55,7 +55,6 @@ app.post("", (req, res) => {
 
 });
 
-
 async function nextCard() {
   const randomCard = card_db[Math.floor(Math.random() * card_db.length)];
   currentCard = randomCard;

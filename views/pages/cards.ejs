@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question Cards</title>
 
-  <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLP5YBWJCR"></script>
     <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-BLP5YBWJCR');
+      gtag('config', 'G-BLP5YBWJCR');
 
-</script>
-    <!-- Link to Custom CSS -->
+    </script>
+
+  <!-- Link to Custom CSS -->
     <link href="/styles/qcards.css" rel="stylesheet" />
 
 </head>
@@ -37,11 +38,33 @@
        </div>
      </div>
    </div>
-   <button id="play" onClick="nextCard()">Play</button>
 
    <form action="" method="POST">
     <input type="submit" value="Generate Name">
   </form>
+
+
+<!-- Slider -->
+<div class="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+  
+</div>
+
+<script>
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value; // Display the default slider value
+
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+</script>
+
+
+<p hidden>This text should be hidden.</p>
+
+<p id = "testq"><%=card_db[Math.floor(Math.random() * card_db.length)].question %></p>
 
 </body>
 </html>
