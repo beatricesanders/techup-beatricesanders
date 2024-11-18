@@ -14,15 +14,42 @@ function flipCard(card_no) {
 
 // Get and print random card from database 
 function changeCard(card_no) {
-    rand = Math.floor(Math.random()* "<%= card_db.length %>") ;
-    
-    theme_icon = getThemeIcon(db[rand].theme)
-    heat_icon = "<img class = 'theme-icon' src = 'images/heat_"+db[rand].heat+".svg'>"
 
+    // first get current card ids 
+    var current_cards = document.querySelectorAll(".q-card .q-id");
+    var card_ids = [];
+
+    for(var i = 0; i < current_cards.length; i++) {
+        card_ids[i] = current_cards[i].innerHTML ;
+    };
+
+    if (card_ids[0] == "blank") {// if first ID is blank,  get a random card 
+        rand = Math.floor(Math.random()* "<%= card_db.length %>") ;
+    } else { // otherwise, make sure card is not already on the board 
+        do {
+            rand = Math.floor(Math.random()* "<%= card_db.length %>") 
+        } while (card_ids.includes(rand));
+    }
+
+    // fetch theme icon 
+    //theme_icon = getThemeIcon(db[rand].theme)
+    theme_icon = "";
+    
+    // fetch heat icon and heat colors 
+    heat_icon = "<img class = 'theme-icon' src = 'images/heat_icons/heat_"+db[rand].heat+".svg'>"
+    heat_colors = getHeatColors(db[rand].heat)
+
+    //update text
     document.getElementById(card_no + '-q').innerHTML = db[rand].question;
     document.getElementById(card_no + '-heat').innerHTML = heat_icon;
     document.getElementById(card_no + '-theme').innerHTML = db[rand].theme + " "+ theme_icon;
     document.getElementById(card_no + '-id').innerHTML = db[rand].id;
+
+    //Change colors
+    document.getElementById(card_no).style.backgroundColor = heat_colors[1];
+    document.getElementById(card_no + '-footer').style.backgroundColor = heat_colors[2];
+
+
 }
 
 // Load all cards
@@ -55,6 +82,30 @@ function getThemeIcon(theme) {
         };
 
     return(theme_icon);
+
+}
+
+// switch function for card colors
+function getHeatColors(theme) {
+
+var heat_colors = []
+
+switch(theme) {
+    case 1:
+        heat_colors[1] = "#72a276";
+        heat_colors[2] = "#517B54";
+        break;
+    case 2:
+        heat_colors[1] = "#448C90";
+        heat_colors[2] = "#346D6F";
+        break;
+    case 3:
+        heat_colors[1] = "#D79784";
+        heat_colors[2] = "#AF7A6E";
+        break;
+    };
+
+return(heat_colors);
 
 }
 

@@ -17,11 +17,11 @@
      <div class = "card-container"> 
       <!--Card 1 card-->
       <div class="q-card" id = "card1">
-        <p class = "q-id" id = "card1-id" hidden> </p>
+        <p class = "q-id" id = "card1-id" hidden>blank</p>
         <h2 class = "q-content" id = "card1-q"> </h2>
         <div class="q-footer" id = "card1-footer">
           <button class="q-heat-tag" id = "card1-heat"> </a>
-          <button class="q-theme-tag" id = "card1-theme"> </a>
+          <button class="q-theme-tag" id = "card1-theme"> </p>
         </div>
       </div>   
       <!-- Card 1 sidebar -->
@@ -34,7 +34,7 @@
     <div class = "card-container"> 
       <!--Card 2 card-->
       <div class="q-card" id = "card2">
-        <p class = "q-id" id = "card2-id" hidden> </p>
+        <p class = "q-id" id = "card2-id" hidden>blank</p>
         <h2 class = "q-content" id = "card2-q"> </h2>
         <div class="q-footer" id = "card2-footer">
           <button class="q-heat-tag" id = "card2-heat"> </a>
@@ -55,9 +55,17 @@
 
 <!-- Slider -->
 <div class="slidecontainer">
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-  
+  <input type="range" min="0" max="100" step="25" class="slider" list="steplist" id = "myRange">
+  <datalist id="steplist">
+      <option>0</option>
+      <option>25</option>
+      <option>50</option>
+      <option>75</option>
+      <option>100</option>
+  </datalist>
 </div>
+
+<p id = "demo"> </p>
 
 <script>
   var slider = document.getElementById("myRange");
@@ -70,8 +78,15 @@
   }
 </script>
 
-<button class="q-theme-tag">test <img src = 'images/food.svg'></a>
 
+<!-- Control buttons -->
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+</div>
 
 </body>
 </html>
