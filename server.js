@@ -22,7 +22,6 @@ const prisma = new PrismaClient();
 // Generate variables for cards and questions
 
 let questions = [];
-let currentCard = {};
 
 // Home page
 app.get('/', function(req, res) {
@@ -43,27 +42,9 @@ app.get('/cards', async function(req, res) {
 
   });
 
-  await nextCard();
-  console.log(currentCard);
-
-res.render('pages/cards', { card: currentCard , card_db: card_db});
+res.render('pages/cards', {card_db: card_db});
 
 });
-
-// Get a new question
-
-app.post("", (req, res) => {
-
-  nextCard();
-
-  res.render("pages/cards", { card: currentCard , card_db: card_db });
-
-});
-
-async function nextCard() {
-  const randomCard = card_db[Math.floor(Math.random() * card_db.length)];
-  currentCard = randomCard;
-}
 
 // Tells the app which port to run on
 app.listen(8080);

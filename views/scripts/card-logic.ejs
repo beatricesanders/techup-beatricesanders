@@ -1,0 +1,12 @@
+<script>
+function changeCard(card_no) {
+    var db = JSON.parse('<%-JSON.stringify(card_db)%>');
+    test = Math.floor(Math.random()* "<%= card_db.length %>") ;
+    document.getElementById(card_no + '-q').innerHTML = db[test].question;
+    document.getElementById(card_no + '-heat').innerHTML = db[test].heat;
+    document.getElementById(card_no + '-theme').innerHTML = db[test].theme;
+
+}
+</script>
+  
+

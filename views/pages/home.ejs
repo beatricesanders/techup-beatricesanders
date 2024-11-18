@@ -1,28 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question Cards</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLP5YBWJCR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-BLP5YBWJCR');
-
-    </script>
-
-  <!-- Link to Custom CSS -->
-  <link href="/styles/qcards.css" rel="stylesheet" />
-
-</head>
+<!-- Load header -->
+<%- include('../partials/header'); %>
 
 <body>
   <!-- Navbar which can be reused across other pages -->
   <%- include('../partials/navbar'); %>
-
 </body>
+
+<div class="hero-container">
+  <div class="hero-logo">
+    <img src="/images/logo.svg" />
+  </div>
+  <div class="hero-tag">
+    <h1>Hi, I'm Izzy!</h1>
+    <p>test And I love helping people break the ice!</p>
+    <div>
+      <button type="button" class="main_btn">Primary</button>
+      <button type="button" class="main_btn">Default</button>
+    </div>
+    <!-- 75% -->
+  </div>
+</div>

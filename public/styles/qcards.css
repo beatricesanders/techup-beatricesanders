@@ -9,7 +9,7 @@ body {
     padding:2rem; 
     /* add flexbox rules */
     display: flex;
-    flex-wrap: row;
+    flex-direction: row;
     align-items: stretch;
     justify-content: space-evenly;
     gap: 2rem;

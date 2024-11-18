@@ -1,48 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question Cards</title>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BLP5YBWJCR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-BLP5YBWJCR');
-
-    </script>
-
-  <!-- Link to Custom CSS -->
-  <link href="/styles/qcards.css" rel="stylesheet" />
-
-</head>
+<!-- Load header -->
+<%- include('../partials/header'); %>
 
 <body>
+
   <!-- Navbar which can be reused across other pages -->
   <%- include('../partials/navbar'); %>
 
   <!-- Cards -->
-  <div class="row">
+
+    <!-- Script for qcards -->
+    <%- include("../scripts/card-logic"); %>
+
+  <div class="q-container">
     <!-- Card 1 -->
      <div class="q-card">
        <div class="q-content">
-         <h1 class= "card-q"><%=card.question %></h1>
+         <h1 class= "card-q" id = "card1-q">test</h1>
        </div>
        <div class="q-footer">
-         <button class="q-heat-tag"><%=card.heat %></a>
-         <button class="q-theme-tag"><%=card.theme %></a>
+         <button class="q-heat-tag" id = "card1-heat">test</a>
+         <button class="q-theme-tag" id = "card1-theme">test</a>
        </div>
      </div>
    </div>
 
-   <form action="" method="POST">
-    <input type="submit" value="Generate Name">
-  </form>
-
+    <button id="Card 1" onclick = "changeCard('card1')"> Change Card 1</button>
+    <div class="main">
+      <div id="message" style="margin-top: 20px; font-size: 24px;"></div>
+    </div>
 
 <!-- Slider -->
 <div class="slidecontainer">
