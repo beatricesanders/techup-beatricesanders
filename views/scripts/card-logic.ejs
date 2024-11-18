@@ -1,12 +1,29 @@
 <script>
+
+var db = JSON.parse('<%-JSON.stringify(card_db)%>');
+
+function flipCard(card_no) {
+    document.getElementById(card_no).classList.toggle("flipped");
+    document.getElementById(card_no + '-q').classList.toggle("flipped");
+    document.getElementById(card_no + '-footer').classList.toggle("flipped");
+
+    setTimeout(function(){changeCard(card_no)},300);
+}
+
 function changeCard(card_no) {
-    var db = JSON.parse('<%-JSON.stringify(card_db)%>');
-    test = Math.floor(Math.random()* "<%= card_db.length %>") ;
-    document.getElementById(card_no + '-q').innerHTML = db[test].question;
-    document.getElementById(card_no + '-heat').innerHTML = db[test].heat;
-    document.getElementById(card_no + '-theme').innerHTML = db[test].theme;
+    rand = Math.floor(Math.random()* "<%= card_db.length %>") ;
+    document.getElementById(card_no + '-q').innerHTML = db[rand].question;
+    document.getElementById(card_no + '-heat').innerHTML = db[rand].heat;
+    document.getElementById(card_no + '-theme').innerHTML = db[rand].theme;
+    document.getElementById(card_no + '-id').innerHTML = db[rand].id;
 
 }
+
+function loadAllCards(card_no) {
+    changeCard('card1')
+    changeCard('card2')
+}
+
 </script>
   
 

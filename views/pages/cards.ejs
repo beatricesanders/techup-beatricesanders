@@ -1,7 +1,7 @@
 <!-- Load header -->
 <%- include('../partials/header'); %>
 
-<body>
+<body onload = "loadAllCards()">
 
   <!-- Navbar which can be reused across other pages -->
   <%- include('../partials/navbar'); %>
@@ -10,21 +10,45 @@
 
     <!-- Script for qcards -->
     <%- include("../scripts/card-logic"); %>
-
+  
   <div class="q-container">
-    <!-- Card 1 -->
-     <div class="q-card">
-       <div class="q-content">
-         <h1 class= "card-q" id = "card1-q">test</h1>
-       </div>
-       <div class="q-footer">
-         <button class="q-heat-tag" id = "card1-heat">test</a>
-         <button class="q-theme-tag" id = "card1-theme">test</a>
-       </div>
-     </div>
-   </div>
 
-    <button id="Card 1" onclick = "changeCard('card1')"> Change Card 1</button>
+    <!-- CARD 1 (Container)-->
+     <div class = "card-container"> 
+      <!--Card 1 card-->
+      <div class="q-card" id = "card1">
+        <p class = "q-id" id = "card1-id" hidden>test</p>
+        <h2 class = "q-content" id = "card1-q">test</h2>
+        <div class="q-footer" id = "card1-footer">
+          <button class="q-heat-tag" id = "card1-heat">test</a>
+          <button class="q-theme-tag" id = "card1-theme">test</a>
+        </div>
+      </div>   
+      <!-- Card 1 sidebar -->
+      <div class= "card-sidebar">
+        <button class = "refresh_btn" id="card1_refresh" onclick = "flipCard('card1')"> <i class="fa fa-refresh" aria-hidden="true"></i></button>
+      </div>
+     </div>
+ 
+    <!-- CARD 2 (Container)-->
+    <div class = "card-container"> 
+      <!--Card 2 card-->
+      <div class="q-card" id = "card2">
+        <p class = "q-id" id = "card2-id" hidden>test</p>
+        <h2 class = "q-content" id = "card2-q">test</h2>
+        <div class="q-footer" id = "card2-footer">
+          <button class="q-heat-tag" id = "card2-heat">test</a>
+          <button class="q-theme-tag" id = "card2-theme">test</a>
+        </div>
+      </div>  
+      <!-- Card 2 sidebar -->
+      <div class= "card-sidebar">
+        <button class = "refresh_btn" id="card2_refresh" onclick = "flipCard('card2')"> <i class="fa fa-refresh" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+</div>
+
     <div class="main">
       <div id="message" style="margin-top: 20px; font-size: 24px;"></div>
     </div>
