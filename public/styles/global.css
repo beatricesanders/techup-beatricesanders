@@ -28,7 +28,7 @@ body {
 }
 
 .logo-img {
-  color: #388697; 
+  fill: #388697; 
   max-width : 75%; 
   vertical-align:middle;
   padding-right: 5px; 

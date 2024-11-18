@@ -17,7 +17,7 @@ function changeCard(card_no) {
     rand = Math.floor(Math.random()* "<%= card_db.length %>") ;
     
     theme_icon = getThemeIcon(db[rand].theme)
-    heat_icon = "<img class = 'theme_icon' src = 'images/heat_"+db[rand].heat+".svg'>"
+    heat_icon = "<img class = 'theme-icon' src = 'images/heat_"+db[rand].heat+".svg'>"
 
     document.getElementById(card_no + '-q').innerHTML = db[rand].question;
     document.getElementById(card_no + '-heat').innerHTML = heat_icon;
@@ -39,16 +39,16 @@ function getThemeIcon(theme) {
 
     switch(theme) {
         case "Food":
-            theme_icon = "<img class = 'theme_icon' src = 'images/food.svg'>";
+            theme_icon = "<img class = 'theme-icon' src = 'images/food.svg'>";
             break;
         case "Nostalgia":
-        theme_icon = "<img class = 'theme_icon' src = 'images/nostalgia.svg'>";
+        theme_icon = "<img class = 'theme-icon' src = 'images/nostalgia.svg'>";
             break;
         case "Life & Career":
-        theme_icon = "<img class = 'theme_icon' src = 'images/career.svg'>";
+        theme_icon = "<img class = 'theme-icon' src = 'images/career.svg'>";
             break;
         case "Hobbies & Habits":
-        theme_icon = "<img class = 'theme_icon' src = 'images/career.svg'>";
+        theme_icon = "<img class = 'theme-icon' src = 'images/career.svg'>";
             break;
         default:
         theme_icon = "";
