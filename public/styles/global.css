@@ -68,7 +68,7 @@ h1 {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 24px; 
+  font-size: 20px; 
   margin: 4px 2px;
   width: 100%; 
 }
@@ -125,7 +125,7 @@ footer {
   }
 
   .main_btn {
-    font-size: 18px; 
+    font-size: 16px; 
   }
   
   footer {

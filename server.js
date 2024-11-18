@@ -39,10 +39,47 @@ app.get('/cards', async function(req, res) {
         id: 'desc'
       }
     ]
-
   });
 
-res.render('pages/cards', {card_db: card_db});
+  card_themes = await prisma.card.findMany({
+    distinct: ['theme'],
+    select: { theme: true }
+  });
+
+res.render('pages/cards', {card_db: card_db, card_themes: card_themes});
+
+});
+
+// New post page
+app.get('/new', function(req, res) {
+  res.render('pages/new');
+});
+
+// Create a new post
+app.post('/new', async function(req, res) {
+    
+  // Try-Catch for any errors
+  try {
+      // Get the title and content from submitted form
+      const { question, heat, theme } = req.body;
+
+      // Reload page if empty title or content
+      if (!question || !heat || !theme) {
+          console.log("Unable to submit new question, missing question, heat or theme.");
+          res.render('pages/new');
+      } else {
+          // Create post and store in database
+          const blog = await prisma.card.create({
+              data: { question, heat, theme },
+          });
+
+          // Redirect back to the homepage
+          res.redirect('/');
+      }
+    } catch (error) {
+      console.log(error);
+      res.render('pages/new');
+    }
 
 });
 

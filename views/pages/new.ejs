@@ -1,0 +1,36 @@
+<!-- Load header -->
+<%- include('../partials/header'); %>
+
+<body>
+<h1> Create your own izzyQ ice-breaker! </h1>
+<p>This is a card creator where you can add new questions to the izzyQ app, for other izzyQ users to enjoy!</p>
+<p>The theme is fixed as "Tech-Up friends", to reflect these as questions added by us pals from Tech-Up*.</p>
+<p>Enter your question in the card below, then rate your question's "heat level".</p>
+<p>If your question is primarily based on fact, then it's heat level should be 1. </p>
+<p>If your question involves forming a snap judgment, then it's heat level should be 2. </p>
+<p>If your question involves forming a careful opinion, then it's heat level should be 3. </p>
+
+  <!-- Form to submit a new post -->
+  <div class="create-post-container">
+    <form method="post">
+          <input name="question" placeholder="Type your question here..." />
+      <label>
+        Theme
+        <textarea
+          name="theme"
+          placeholder="Write what's on your mind..."
+        ></textarea>
+      </label>
+
+      <label>
+        Heat
+        <textarea
+          name="heat"
+          placeholder="Write what's on your mind..."
+        ></textarea>
+      </label>
+
+      <input type="submit" value="🚀 Create post" />
+    </form>
+  </div>
+</body>

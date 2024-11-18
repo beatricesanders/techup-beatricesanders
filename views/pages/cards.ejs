@@ -17,7 +17,6 @@
      <div class = "card-container"> 
       <!--Card 1 card-->
       <div class="q-card" id = "card1">
-        <p class = "q-id" id = "card1-id" hidden>blank</p>
         <h2 class = "q-content" id = "card1-q"> </h2>
         <div class="q-footer" id = "card1-footer">
           <button class="q-heat-tag" id = "card1-heat"> </a>
@@ -34,7 +33,6 @@
     <div class = "card-container"> 
       <!--Card 2 card-->
       <div class="q-card" id = "card2">
-        <p class = "q-id" id = "card2-id" hidden>blank</p>
         <h2 class = "q-content" id = "card2-q"> </h2>
         <div class="q-footer" id = "card2-footer">
           <button class="q-heat-tag" id = "card2-heat"> </a>
@@ -80,13 +78,42 @@
 
 
 <!-- Control buttons -->
+<button onclick = "allActive()">Select All</button>
+<button onclick = "noneActive()">De-select All</button>
+
 <div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
-  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
-  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
-  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+  <% card_themes.forEach(theme => { %>
+    <button class="theme-card active" onclick = "toggleActive(this)" ><%= theme.theme %></button>
+  <% }); %>
 </div>
+
+<script>
+  
+function toggleActive(target) {
+  if (target.classList.contains("active")) {
+      target.classList.remove("active");
+    } else {
+      target.className += " active";
+    }
+}
+
+function noneActive() {
+  var all_cards = document.getElementById("myBtnContainer").getElementsByClassName("theme-card");
+  for (var i = 0; i < all_cards.length; i++) {
+    if (all_cards[i].classList.contains("active")) {all_cards[i].classList.remove("active")};
+  }
+}
+
+function allActive() {
+  var all_cards = document.getElementById("myBtnContainer").getElementsByClassName("theme-card");
+  for (var i = 0; i < all_cards.length; i++) {
+    if (all_cards[i].classList.contains("active")) {all_cards[i].classList.remove("active")};
+    all_cards[i].className += " active";
+    };
+  }
+
+
+</script>
 
 </body>
 </html>
