@@ -11,7 +11,7 @@ body {
 }
 
 .hero-container {
-  margin-top: 100px; 
+  margin-top: 60px; 
   display: flex;
   flex-wrap: wrap;
   font-size: 30px;
@@ -28,6 +28,7 @@ body {
 }
 
 .logo-img {
+  color: #388697; 
   max-width : 75%; 
   vertical-align:middle;
   padding-right: 5px; 
@@ -43,7 +44,7 @@ h1 {
   font-size: 60px; 
   margin-bottom: 5px; 
 }
-p {
+.hero-text > p {
   margin-top: 5px; 
   font-size: 26px; 
 }
@@ -71,6 +72,14 @@ p {
   width: 100%; 
 }
 
+
+footer {
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 50px; 
+  font-size: 14px; 
+  color: darkgrey;
+}
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media (max-width: 800px) {
@@ -106,7 +115,7 @@ p {
     margin-top:0px; 
     font-size: 46px; 
   }
-  p {
+  .hero-text > p  {
     font-size: 20px; 
   }
 
@@ -114,6 +123,12 @@ p {
     font-size: 18px; 
   }
   
+  footer {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 10px; 
+  }
+
 }
 
 

@@ -163,3 +163,8 @@ body {
 .refresh_btn:hover {
   color: grey; 
 }
+
+.theme_icon {
+  width: 12px; 
+  fill: white; 
+}
