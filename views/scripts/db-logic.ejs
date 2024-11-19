@@ -1,0 +1,29 @@
+<script>
+
+    // Load in database from server
+    var db = JSON.parse('<%-JSON.stringify(card_db)%>');
+    console.log(db.length);
+    
+    // Filter themes 
+    
+    function filterDB(db, val) {
+    
+        var id = val + "-cards";
+    
+        //get active filters 
+        active_buttons = document.getElementById(id).getElementsByClassName("active");
+        active = []
+    
+        for(var i = 0; i < active_buttons.length; i++) {
+            active[i] = active_buttons[i].innerHTML ;
+            if (val=="heat") {active[i] = parseInt(active[i].charAt(42))}; // switch for heat
+        };
+    
+        console.log(active)
+    
+        // filter database to only include active themes
+        var filtered_db = db.filter(result => active.includes(result[val]));
+        return(filtered_db);
+    
+    }
+</script>

@@ -6,32 +6,29 @@ body {
 }
 
 .q-container {
-    padding:2rem; 
+    padding: 2rem; 
     /* add flexbox rules */
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
-    gap: 1rem;
   }
 
   .card-container {
     flex: 0 1 100% ; 
     display: flex; 
     flex-direction: row; 
-    justify-content: center;
+    justify-content: center; 
   }
 
   .card-sidebar {
     flex: 0 1 5% ; 
-    border-radius: 20px;
-
   }
 
   .q-card {
     flex: 0 1 95% ; 
     max-width: 400px; 
-    min-height: 150px;
+    min-height: 200px;
     background: #72a276;
     border-radius: 20px;
     display: flex; 
@@ -124,37 +121,6 @@ body {
     }
   }
 
-  /* Sliders */
-  .slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;  
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-  }
-  
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    background: #04AA6D;
-    cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #04AA6D;
-    cursor: pointer;
-  }
-
   /* Refresh Button */
   .refresh_btn {
     background: transparent;
@@ -173,3 +139,75 @@ body {
 .theme-icon {
   width: 20px; 
 }
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #E7E4DA;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  font: "Geist"
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  margin-left: 5px;
+}
+
+.open:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Add a background color to the button if it is clicked on (add the .open class with JS), and when you move the mouse over it (hover) */
+.open, .collapsible:hover {
+  background-color: #d1cfc6;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  background-color: #EFEDE6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.play-btn-container{
+  display:flex ;
+  align-items: center;
+  justify-content: center;
+  margin: 1em; 
+  margin-bottom: 0px; 
+  padding-bottom: 0px; 
+
+}
+
+.play-btn {
+  flex: 0 0 20%;
+  background-color: #aaa8a1;
+  border-radius: 40px;
+  border: none;
+  color: white;
+  padding: 15px 5px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px; 
+  width: 40%; 
+  cursor: pointer;
+  
+}
+
+.play-btn:hover{
+  background-color: #8c8b85;
+  color: #444;
+  
+}
+

@@ -1,14 +1,22 @@
 
-<div class="topnav" id="myTopnav">
+<div class="topnav" id = "myTopnav">
+  <a href="/" class="logo"><img src = "images/logo-long.svg"></a>
+  <div class="topnav-right">
+    <a href="/cards">Launch izzyQ App</a>
+    <a href="/list">Generate izzyLists</a>
+    <a href="/new">Add New Card</a>
+    <a href="/about">About</a>
+  </div>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
-  <a href="/" class="active">Home</a>
-  <a href="/cards">Cards</a>
   </a>
 </div>
 
+<hr>
+
 <script>
-  function myFunction() {
+  /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";

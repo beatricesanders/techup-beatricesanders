@@ -1,0 +1,9 @@
+#output-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2em; 
+  }
+  
+  #output-table tr {
+    border-bottom: 1px solid #ddd;
+  }

@@ -1,44 +1,140 @@
-.container {
-    overflow: hidden;
-  }
-  
-  .filterDiv {
-    float: left;
-    background-color: #2196F3;
-    color: #ffffff;
-    width: 100px;
-    line-height: 100px;
-    text-align: center;
-    margin: 2px;
-    display: none; /* Hidden by default */
-  }
-  
-  /* The "show" class is added to the filtered elements */
-  .show {
-    display: block;
-  }
-  
+.filter-container {
+  display: flex;
+  flex-wrap: row;
+  font-size: 30px;
+  align-items: flex-start;
+}
+
+.filter-inner-container {
+  flex: 30%;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  gap: 10px; 
+  margin: 0.5em;
+}
+
+.filter-inner-container h2 {
+  margin-bottom: 0px; 
+}
+
+.filter-inner-container a {
+  margin-top: 2em; 
+  font-size: 14px; 
+}
+
+
+.filter-cards-grp{
+  height: 60%;
+  gap: 0.5em; 
+  display: flex; 
+  flex-wrap: wrap;
+  align-content: space-evenly;
+
+}
+
+.filter-container #filter-heat {
+  flex: 30%;
+  display: flex; 
+  flex-wrap: wrap;
+  flex-direction: column; 
+  align-content: space-evenly;
+  gap: 10px; 
+}
+
   /* Style the buttons */
-  .theme-card {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: #f1f1f1;
+  .card-btn {
+    border: 2px solid #dbdad8;
+    color: white; 
+    background-color: #dbdad8;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;  
     cursor: pointer;
+    border-radius: 15px; 
+    font: "Geist";
+    font-size: 15px;
   }
   
   /* Add a light grey background on mouse-over */
-  .theme-card:hover {
-    background-color: #ddd;
+  .card-btn:hover, .card-btn.active {
+    background-color: #553555;
+    color: white;  
+    border-color: #553555
   }
-  
-  /* Add a dark background to the active button */
-  .theme-card.active {
-    background-color: #666;
+
+  .card-btn.active:hover {
+    background-color: #3b253b;
     color: white;
   }
 
-  .theme-card.active:hover {
-    background-color: black;
-    color: white;
+  #heat-cards img {
+    height : 100%; 
+    padding: 0px;
+    margin: 0px; 
   }
+
+  #heat-cards .card-btn {
+    padding: 0px;
+    margin: 0px; 
+    width: 80px;
+    height: 48px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid #dbdad8;
+    background-color: #dbdad8;
+  }
+
+  #heat-card-1:hover, #heat-card-1.active, #heat-card-1.static {
+    background-color:#72a276;
+    border-color:#72a276;
+
+  }
+
+  #heat-card-1.active:hover {
+    background-color:#59885D;
+  }
+
+  #heat-card-2:hover, #heat-card-2.active, #heat-card-2.static {
+    background-color: #448C90; 
+    border-color: #448C90; 
+  }
+
+  #heat-card-2.active:hover {
+    background-color:#377274;
+  }
+  
+  #heat-card-3:hover, #heat-card-3.active, #heat-card-3.static   {
+    background-color: #D79784;  
+    border-color: #D79784;
+  }
+  
+  #heat-card-3.active:hover {
+    background-color:#b78070;
+  }
+
+.selector-btn-grp button {
+  background-color: #bdbcb6; /* Green background */
+  border: 1px solid #8b8b8a; /* Green border */
+  color: #f4f3ee; /* White text */
+  padding: 5px 15px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.selector-btn-grp button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.selector-btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.selector-btn-grp button:hover {
+  background-color: #8b8b8a;
+}

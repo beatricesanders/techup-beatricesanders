@@ -1,0 +1,70 @@
+<!-- Load header -->
+<%- include('../partials/header'); %>
+
+<body>
+  <!-- Link to table styles -->
+  <link href="/styles/list.css" rel="stylesheet" />
+
+  <!-- Navbar which can be reused across other pages -->
+  <%- include('../partials/navbar'); %>
+
+  <h3>Welcome to the izzyList generator!</h3>
+  <p>
+    Here you can generate a list of ice-breakers based on selected themes and/or
+    heat levels
+  </p>
+
+  <!-- Filters -->
+  <%- include('../partials/filters'); %>
+
+  <!-- Load DB logic -->
+  <%- include('../scripts/db-logic'); %>
+
+  <script>
+    function run() {
+      var active_db = filterDB(db, "theme"); //filter by theme
+      active_db = filterDB(active_db, "heat"); //filter by heat
+
+      active_db.sort(function (a, b) {
+        if (a.theme === b.theme) {
+          // Heat is only important when themes are the same
+          return b.heat - a.heat;
+        }
+        return a.theme > b.theme ? 1 : -1;
+      });
+
+      console.log(active_db);
+
+      const tableBody = document.querySelector("tbody");
+      tableBody.innerHTML = "";
+      for (var i = 0; i < active_db.length; i++) {
+        card = active_db[i];
+        tableBody.innerHTML += `<tr>
+                                  <td>${i + 1 || ""}</td>
+                                  <td>${card.question || ""}</td>
+                                  <td>${card.theme || ""}</td>
+                                  <td>${card.heat || ""}</td>
+                                </tr>`;
+      }
+    }
+  </script>
+
+<div class = "play-btn-container">    
+  <button onclick="run()" class = "play-btn">Run</button>
+</div>
+
+  <!-- Table -->
+  <table id = "output-table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>question</th>
+        <th>theme</th>
+        <th>heat</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+
+</body>

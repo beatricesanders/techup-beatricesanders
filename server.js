@@ -24,13 +24,7 @@ const prisma = new PrismaClient();
 let questions = [];
 
 // Home page
-app.get('/', function(req, res) {
-  res.render('pages/home');
-});
-
-// Load card page
-
-app.get('/cards', async function(req, res) {
+app.get('/', async function(req, res) {
 
   // Get questions 
   card_db = await prisma.card.findMany({
@@ -45,9 +39,26 @@ app.get('/cards', async function(req, res) {
     distinct: ['theme'],
     select: { theme: true }
   });
+  
+  res.render('pages/home');
+});
+
+// Load card page
+
+app.get('/cards', function(req, res) {
 
 res.render('pages/cards', {card_db: card_db, card_themes: card_themes});
 
+});
+
+// About page
+app.get('/about', function(req, res) {
+  res.render('pages/about');
+});
+
+// Lists page
+app.get('/list', function(req, res) {
+  res.render('pages/list');
 });
 
 // New post page

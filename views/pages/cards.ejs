@@ -47,73 +47,43 @@
 
 </div>
 
-    <div class="main">
-      <div id="message" style="margin-top: 20px; font-size: 24px;"></div>
-    </div>
+<!-- Instructions -->
+ <div class = "about-container" style = "text-align:center">
+  <h3>Welcome to the izzyQ generator!</h3>
+  <p>izzyQ provides two icebreaker questions at a time. We recommend allowing participants to choose to answer either question.</p>
+  <p>Click on   <i class="fa fa-refresh" aria-hidden="true" style = "color: darkgray"></i>   to get a new card.</p> 
+  <p>Filter card options by clicking on the desired themes and/or heat levels below.</p>
 
-<!-- Slider -->
-<div class="slidecontainer">
-  <input type="range" min="0" max="100" step="25" class="slider" list="steplist" id = "myRange">
-  <datalist id="steplist">
-      <option>0</option>
-      <option>25</option>
-      <option>50</option>
-      <option>75</option>
-      <option>100</option>
-  </datalist>
+
+</div>
+<button type="button" class="collapsible">Open Filters</button>
+<div class="content">
+  <div class = "play-btn-container">    
+    <button class ="play-btn" onclick = "applyFilters()">Apply filters</button>
+  </div>
+
+  <%- include('../partials/filters'); %>
 </div>
 
-<p id = "demo"> </p>
 
 <script>
-  var slider = document.getElementById("myRange");
-  var output = document.getElementById("demo");
-  output.innerHTML = slider.value; // Display the default slider value
-
-  // Update the current slider value (each time you drag the slider handle)
-  slider.oninput = function() {
-    output.innerHTML = this.value;
-  }
-</script>
-
-
-<!-- Control buttons -->
-<button onclick = "allActive()">Select All</button>
-<button onclick = "noneActive()">De-select All</button>
-
-<div id="myBtnContainer">
-  <% card_themes.forEach(theme => { %>
-    <button class="theme-card active" onclick = "toggleActive(this)" ><%= theme.theme %></button>
-  <% }); %>
-</div>
-
-<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
   
-function toggleActive(target) {
-  if (target.classList.contains("active")) {
-      target.classList.remove("active");
-    } else {
-      target.className += " active";
-    }
-}
-
-function noneActive() {
-  var all_cards = document.getElementById("myBtnContainer").getElementsByClassName("theme-card");
-  for (var i = 0; i < all_cards.length; i++) {
-    if (all_cards[i].classList.contains("active")) {all_cards[i].classList.remove("active")};
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("open");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
   }
-}
-
-function allActive() {
-  var all_cards = document.getElementById("myBtnContainer").getElementsByClassName("theme-card");
-  for (var i = 0; i < all_cards.length; i++) {
-    if (all_cards[i].classList.contains("active")) {all_cards[i].classList.remove("active")};
-    all_cards[i].className += " active";
-    };
-  }
+  </script>
 
 
-</script>
 
 </body>
 </html>

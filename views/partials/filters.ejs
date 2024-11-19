@@ -1,0 +1,73 @@
+
+<!-- Filters -->
+<div class = "filter-container">
+  <div class = "filter-inner-container" id = "filter-themes">
+    <h2>Theme Packs</h2>
+    <!-- Control buttons -->
+    <div class = "selector-btn-grp">
+      <button onclick = "allActive('theme')">Select All</button>
+      <button onclick = "noneActive('theme')">De-select All</button>
+     </div>
+    <!-- Theme Cards -->
+    <div class="filter-cards-grp" id="theme-cards">
+      <% card_themes.forEach(theme => { %>
+        <button class="card-btn active" onclick = "toggleActive(this)" ><%= theme.theme %></button>
+      <% }); %>
+    </div>
+  </div>
+  
+  <div class = "filter-inner-container" id = "filter-heat">
+    <h2>Heat Tags</h2>
+    <!-- Control buttons -->
+     <div class = "selector-btn-grp">
+      <button onclick = "allActive('heat')">Select All</button>
+      <button onclick = "noneActive('heat')">De-select All</button>
+     </div>
+
+    <!-- Heat Cards -->
+    <div class="filter-cards-grp" id="heat-cards">
+      <button class="card-btn active" onclick = "toggleActive(this)" id= "heat-card-1">
+        <img src = 'images/heat_icons/heat_1.svg'>
+      </button>
+      <button class="card-btn active" onclick = "toggleActive(this)" id= "heat-card-2">
+        <img src = 'images/heat_icons/heat_2.svg'>
+      </button>
+      <button class="card-btn active" onclick = "toggleActive(this)" id= "heat-card-3">
+        <img src = 'images/heat_icons/heat_3.svg'>
+      </button>
+    </div>
+    <a href = "about/#about-heat-tag-ref" target="_blank">What is a heat tag?</a>
+  </div>
+ </div>
+
+
+
+<script>
+  
+function toggleActive(target) {
+  if (target.classList.contains("active")) {
+      target.classList.remove("active");
+    } else {
+      target.className += " active";
+    }
+}
+
+function noneActive(val) {
+  var ids = val + "-cards";
+  var all_cards = document.getElementById(ids).getElementsByClassName("card-btn");
+  for (var i = 0; i < all_cards.length; i++) {
+    if (all_cards[i].classList.contains("active")) {all_cards[i].classList.remove("active")};
+  }
+}
+
+function allActive(val) {
+  var ids = val + "-cards";
+  var id = val + "-card";
+  var all_cards = document.getElementById(ids).getElementsByClassName("card-btn");
+  for (var i = 0; i < all_cards.length; i++) {
+    if (all_cards[i].classList.contains("active")) {all_cards[i].classList.remove("active")};
+    all_cards[i].className += " active";
+    };
+  }
+
+</script>

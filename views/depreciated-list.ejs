@@ -1,0 +1,8 @@
+
+    <!-- Show blog posts -->
+    <% card_db.forEach(card => { %>
+        <article class="post-container">
+            <h3><%= card.question %></h3>
+            <p><%= card.theme %></p>
+        </article>
+    <% }); %>

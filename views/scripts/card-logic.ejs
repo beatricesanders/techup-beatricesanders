@@ -1,28 +1,8 @@
+<!-- Load DB logic -->
+<%- include('../scripts/db-logic'); %>
+
+
 <script>
-
-// Load in database from server
-var db = JSON.parse('<%-JSON.stringify(card_db)%>');
-
-// Filter themes 
-
-function filterThemes(db) {
-
-    //get active filters 
-    active_buttons = document.getElementById("myBtnContainer").getElementsByClassName("active");
-    active_themes = []
-
-    for(var i = 0; i < active_buttons.length; i++) {
-        active_themes[i] = active_buttons[i].innerHTML ;
-    };
-
-    console.log(active_themes)
-
-    // filter database to only include active themes
-    var filtered_db = db.filter(result => active_themes.includes(result.theme));
-    return(filtered_db);
-
-}
-
 
 // Flip card animation 
 function flipCard(card_no) {
@@ -33,12 +13,35 @@ function flipCard(card_no) {
     setTimeout(function(){changeCard(card_no)},300);
 }
 
+// Apply filters 
+function applyFilters() {
+
+    active_heat_cards = document.getElementById("heat-cards").getElementsByClassName("active").length
+    active_theme_cards = document.getElementById("theme-cards").getElementsByClassName("active").length
+
+    if(active_heat_cards == 0) {
+        alert("No heat cards selected! Please select at least one theme and one heat card before filtering.");
+    } if(active_theme_cards == 0){
+        alert("No theme cards selected! Please select at least one theme and one heat card before filtering.");
+    } else {
+        flipAllCards();
+    }
+}
+
+// Flip all cards 
+function flipAllCards() {
+    flipCard('card1')
+    flipCard('card2')
+}
+
 // Get and print random card from database 
 function changeCard(card_no) {
 
-    // first filter db 
-    var active_db = filterThemes(db)
+    // Filter database
+    var active_db = filterDB(db,"theme") //filter by theme
+    var active_db = filterDB(active_db,"heat") //filter by heat
 
+    console.log(active_db)
     // first get current card ids 
     var current_cards = document.querySelectorAll(".q-card .q-content");
     var current_qs = [];

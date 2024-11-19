@@ -11,9 +11,8 @@ body {
 }
 
 .hero-container {
-  margin-top: 60px; 
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: row;
   font-size: 30px;
   align-items: center;
 }
@@ -28,7 +27,6 @@ body {
 }
 
 .logo-img {
-  fill: #388697; 
   max-width : 75%; 
   vertical-align:middle;
   padding-right: 5px; 
@@ -37,7 +35,7 @@ body {
 .hero-text {
   padding: 1em; 
   flex: 60%;
-  justify-text: center;
+  justify-content: center;
 
 }
 
@@ -71,6 +69,7 @@ h1 {
   font-size: 20px; 
   margin: 4px 2px;
   width: 100%; 
+  cursor: pointer;
 }
 
 .main_btn:hover {
@@ -109,7 +108,8 @@ footer {
   }
 
   .logo-img{
-    height: 200px ; 
+    height: 300px ; 
+    margin-bottom: -30px;
   }
 
   .hero-buttons {
@@ -136,5 +136,41 @@ footer {
 
 }
 
+table {
+  border-collapse: collapse;
+}
 
+table :where(tr, th, td) {
+  border: 1px solid gray;
+}
 
+.about {
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+}
+
+.about-container {
+  padding-left: 2em; 
+  padding-right: 2em; 
+  flex: 1; 
+  text-align: left; 
+}
+
+.about h2 {
+  margin-left: 1em; 
+  margin-bottom: 5px;
+  font-size: 30px; 
+  font-weight: bold; 
+  color: #327786;
+}
+
+.heat-exp-row{
+  width : 100px;
+  height: 60%;
+  gap: 0.5em; 
+  display: flex; 
+  flex-wrap: wrap;
+  align-content: space-evenly;
+
+}

@@ -1,0 +1,81 @@
+<!-- Load header -->
+<%- include('../partials/header'); %>
+
+<body>
+     <!-- Navbar which can be reused across other pages -->
+  <%- include('../partials/navbar'); %>
+
+<!-- Instructions -->
+
+ <div class = "about">
+    <h2> About izzyQs</h2>
+    <div class = "about-container" >
+        <h3>What is izzyQs?</h3>
+        <p>izzyQ is an easy ice-breaker generator for smooth and easy group facilitation. If you're facilitating a group and need an ice-breaker, Izzy's got you! </p>
+        <p>Launch the <a href="/cards">izzyQ app</a> to kickstart your icebreaker session right away.</p>
+        <p>Or, if you're planning in advance, you can generate a custom list of icebreakers using the <a href="/list"> izzyLists generator</a></p>
+    </div>
+
+    <div class = "about-container" >
+        <h3>What makes izzyQ questions special?</h3>
+        <p>izzyQs are designed to take the cringe out of your ice-breakers, and increase their efficacy in creating a comfortable environment for conversation and collaboration.
+             Each question is carefully crafted to be easy to answer, 
+            yet provide fun and quick introductions. No <em>"Name one interesting fact about you"</em> 's here! </p>
+        <p>To get the most out of your izzyQs, we recommend filtering based on your group's specific context. 
+            Select theme packs that are of interest to your group. 
+            If you have a team that is already familiar with each other each other well, 
+            choose questions with a hotter heat tag. (see <b>"What is a heat tag?"</b> below)</p>
+    </div>  
+    <a id = "about-heat-tag-ref"></a>
+      <div class = "about-container" >
+        <h3>What is a heat tag?</h3>
+        <div class="heat-exp-row">
+        <p>Heat tag 1: "Cool"</p>
+        <p>Heat tag 2: "Warm"</p>
+        <p>Heat tag 3: "Hot"</p>
+        </div>
+        <div class="filter-cards-grp" id = "heat-cards">
+            <button class="card-btn static" id= "heat-card-1">
+              <img src = 'images/heat_icons/heat_1.svg'>
+            <button class="card-btn static" id= "heat-card-2">
+              <img src = 'images/heat_icons/heat_2.svg'>
+            </button>
+            <button class="card-btn static"  id= "heat-card-3">
+              <img src = 'images/heat_icons/heat_3.svg'>
+            </button>
+          </div>
+        <p>Heat tags are our way of ranking the "difficulty" of each question. Questions with a low heat tag ("cool questions") 
+            generally involve only sharing facts about oneself, while questions with a higher heat tag ("hotter questions") will
+            involve participants needing to form and share an opinion, which might take more time or require more vulnerability.
+        </p>
+        <p>We recommend sticking with "cooler questions" when participants have not met each other before, 
+            or you're in a time crunch. 
+            Ask "hotter questions" if participants are more familiar with each other, or you have lots of time for your session.</p>
+
+      </div>
+    
+          
+    <div class = "about-container" >
+        <h3>But seriously, how do you choose your questions? Can I add my own in?</h3>
+        <p>Our question selection philosophy is to </p>
+        <ul>
+            <li>avoid superlatives</li>
+            <li>prioritise questions that tap on universal experiences...</li>
+            <li>...and yet are likely to invite diverse responses</li>
+            <li>phrase questions simply, minimising the number of "moving parts"</li>
+            <li>and of course, lean into the funny!</li>
+        </ul>
+        <p>While you can <a href="/new">submit your own questions</a>, we've sorted them into a unique theme card pack, so you know which card packs are from izzyQ and which are user-generated.</p>
+    </div>
+
+    
+    
+    <div class = "about-container" >
+        <h3>Who is Izzy?</h3>
+        <p>Izzy is a penguin who loves to help others break the ice! 
+            With her ice-breaking tools, dynamic teamwork and conversations become so 
+            <strike>izzy</strike> easy!</p>
+    </div>
+    
+ </div>
+</body>
