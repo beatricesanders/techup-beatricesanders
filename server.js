@@ -1,9 +1,12 @@
 // Needed for dotenv
 require("dotenv").config();
 
+// Needed for popups
+const notifier = require('node-notifier');
+
 // Needed for Express
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
 
 // Needed for EJS
 app.set('view engine', 'ejs');
@@ -86,6 +89,11 @@ app.post('/new', async function(req, res) {
               data: { question, heat , theme },
           });
 
+          notifier.notify({
+            title: 'Success!',
+            message: 'Thanks for submitting your question! You will now be redirected to the homepage. Check the izzyQ or izzyList apps for your new question!',
+          });
+          
           // Redirect to homepage upon successful submission 
           res.redirect('/');
       }
