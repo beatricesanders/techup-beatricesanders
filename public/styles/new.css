@@ -148,7 +148,7 @@ textarea:focus {
   border: .1em solid lightgrey; 
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
   textarea {
     font-size: 18px; 
   }
