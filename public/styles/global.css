@@ -158,8 +158,7 @@ table :where(tr, th, td) {
   text-align: left; 
 }
 
-h2 {
-  margin-left: 1em; 
+.about-container h2 {
   margin-bottom: 5px;
   font-size: 30px; 
   font-weight: bold; 

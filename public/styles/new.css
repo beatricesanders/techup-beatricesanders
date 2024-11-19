@@ -1,0 +1,149 @@
+.form-container {
+  display:flex;
+  align-items: center;
+  justify-content:center; 
+}
+
+.newq-card {
+  flex: 0 1 60%; 
+  margin: 2em; 
+  width: 400px; 
+  height: 100%; 
+  background: #72a276;
+  border-radius: 20px;
+}
+
+.newq-footer {
+  padding: .75rem 1.25rem;
+  min-width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #517B54; 
+  /* ensure width includes padding */
+  margin-top: auto; 
+  box-sizing: border-box; 
+}
+
+.new-theme {
+  color: #f4f3ee;
+  font-family : "Geist"; 
+  background-color: transparent;
+  border: none;
+  float: right; 
+  font-weight: 500; 
+  opacity: 90%;
+}
+
+.form-sidebar {
+  flex: 0 1 40%; 
+}
+
+.form-sidebar h3{
+  font-weight: 500; 
+  padding:0px;
+}
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none; /*remove the resize handle on the bottom right*/
+  width: 100%;
+  height: 150px;
+  padding: 24px 36px 24px 36px;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  float: center;
+  font-family: "Geist";
+  background-color: transparent;
+}
+
+textarea::placeholder {
+  color: white;
+  opacity: 85%;
+}
+
+textarea:focus {
+  border: none;
+}
+
+
+/* Customize the label (the container) */
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size:18px; 
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.tip-box {
+  font-size:95%;
+  margin-left:2em;
+  width:80%; 
+  padding: 0px 15px 0px 15px; 
+  background: #e7e6e1;
+  border: .1em solid lightgrey; 
+}

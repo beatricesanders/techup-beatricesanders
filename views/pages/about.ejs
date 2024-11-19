@@ -8,7 +8,9 @@
 <!-- Instructions -->
 
  <div class = "about">
+  <div class = "about-container" >
     <h2> About izzyQs</h2>
+  </div>
     <div class = "about-container" >
         <h3>What is izzyQs?</h3>
         <p>izzyQ is an easy ice-breaker generator for smooth and easy group facilitation. If you're facilitating a group and need an ice-breaker, Izzy's got you! </p>
@@ -29,11 +31,6 @@
     <a id = "about-heat-tag-ref"></a>
       <div class = "about-container" >
         <h3>What is a heat tag?</h3>
-        <div class="heat-exp-row">
-        <p>Heat tag 1: "Cool"</p>
-        <p>Heat tag 2: "Warm"</p>
-        <p>Heat tag 3: "Hot"</p>
-        </div>
         <div class="filter-cards-grp" id = "heat-cards">
             <button type = "button" class="card-btn static" id= "heat-card-1">
               <img src = 'images/heat_icons/heat_1.svg'>
@@ -44,13 +41,18 @@
               <img src = 'images/heat_icons/heat_3.svg'>
             </button>
           </div>
-        <p>Heat tags are our way of ranking the "difficulty" of each question. Questions with a low heat tag ("cool questions") 
-            generally involve only sharing facts about oneself, while questions with a higher heat tag ("hotter questions") will
+            <div class="filter-cards-grp">
+              <button type = "button" class="card-btn label" style = "color:#59885D">"Cool"</button>
+              <button type = "button" class="card-btn label" style = "color:#377274">"Warm"</button>
+              <button type = "button" class="card-btn label" style = "color:#b78070">"Hot"</button>
+            </div>
+        <p>Heat tags are our way of ranking the "difficulty" of each question. Questions with a <span style = "color:#59885D; font-weight: 500">low heat tag ("cool questions")</span> 
+            generally involve only sharing facts about oneself, while questions with a a <span style = "color:#b78070; font-weight: 500">high heat tag ("hot questions")</span>  will
             involve participants needing to form and share an opinion, which might take more time or require more vulnerability.
         </p>
-        <p>We recommend sticking with "cooler questions" when participants have not met each other before, 
+        <p>We recommend sticking with <span style = "color:#59885D; font-weight: 500">"cool" questions</span> when participants have not met each other before, 
             or you're in a time crunch. 
-            Ask "hotter questions" if participants are more familiar with each other, or you have lots of time for your session.</p>
+            Ask <span style = "color:#b78070; font-weight: 500">"hot" questions</span> if participants are more familiar with each other, or you have lots of time for your session.</p>
 
       </div>
     

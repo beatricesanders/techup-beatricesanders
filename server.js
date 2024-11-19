@@ -66,13 +66,15 @@ app.get('/new', function(req, res) {
   res.render('pages/new');
 });
 
-// Create a new post
+// Create a new question
 app.post('/new', async function(req, res) {
     
   // Try-Catch for any errors
   try {
       // Get the title and content from submitted form
-      const { question, heat, theme } = req.body;
+      question = req.body.question;
+      heat = parseInt(req.body.heat);
+      theme = req.body.theme;
 
       // Reload page if empty title or content
       if (!question || !heat || !theme) {
@@ -81,10 +83,10 @@ app.post('/new', async function(req, res) {
       } else {
           // Create post and store in database
           const blog = await prisma.card.create({
-              data: { question, heat, theme },
+              data: { question, heat , theme },
           });
 
-          // Redirect back to the homepage
+          // Redirect to homepage upon successful submission 
           res.redirect('/');
       }
     } catch (error) {

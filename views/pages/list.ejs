@@ -8,7 +8,9 @@
   <!-- Navbar which can be reused across other pages -->
   <%- include('../partials/navbar'); %>
 
-  <h2> izzyLists</h2>
+  <div class = "about-container">
+    <h2> izzyLists</h2>
+  </div>
 
   <div class = "about-container">
     <h3>Welcome to the izzyList generator!</h3>
@@ -43,11 +45,24 @@
       tableBody.innerHTML = "";
       for (var i = 0; i < active_db.length; i++) {
         card = active_db[i];
+        var card_heat_tag = card.heat;
+
+        switch(card_heat_tag){
+          case 1: 
+            card_heat_tag =("Cool");
+            break;
+          case 2: 
+            card_heat_tag =("Warm");
+            break;
+          case 3: 
+            card_heat_tag =("Hot");
+            break;
+        };
         tableBody.innerHTML += `<tr>
                                   <td>${i + 1 || ""}</td>
                                   <td>${card.question || ""}</td>
                                   <td>${card.theme || ""}</td>
-                                  <td>${card.heat || ""}</td>
+                                  <td>${card_heat_tag || ""}</td>
                                 </tr>`;
       }
     }
@@ -62,14 +77,16 @@
     <!-- Table -->
     <table class = "output-table">
       <thead>
-        <tr>
-          <th>id</th>
-          <th>question</th>
-          <th>theme</th>
-          <th>heat</th>
+        <tr class ="output-table-row">
+          <th>S/N</th>
+          <th>Question</th>
+          <th>Theme</th>
+          <th>Heat-tag</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <tr class ="output-table-row"></tr>
+      </tbody>
     </table>
 </div>
 

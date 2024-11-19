@@ -1,9 +1,11 @@
-.output-table {
+table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 2em; 
   }
   
-  .output-table tr {
-    border-bottom: 1px solid #ddd;
+td, th {
+    text-align: left;
+    padding: 5px 10px 5px 10px; 
   }
+  
