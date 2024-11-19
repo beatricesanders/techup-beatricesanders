@@ -152,4 +152,8 @@ textarea:focus {
   textarea {
     font-size: 18px; 
   }
+
+  .form-container {
+    flex-direction: column;
+  }
 }
