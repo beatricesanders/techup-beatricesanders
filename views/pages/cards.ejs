@@ -19,13 +19,13 @@
       <div class="q-card" id = "card1">
         <h2 class = "q-content" id = "card1-q"> </h2>
         <div class="q-footer" id = "card1-footer">
-          <button class="q-heat-tag" id = "card1-heat"> </a>
-          <button class="q-theme-tag" id = "card1-theme"> </p>
+          <button type = "button" class="q-heat-tag" id = "card1-heat"> </a>
+          <button type = "button" class="q-theme-tag" id = "card1-theme"> </p>
         </div>
       </div>   
       <!-- Card 1 sidebar -->
       <div class= "card-sidebar">
-        <button class = "refresh_btn" id="card1_refresh" onclick = "flipCard('card1')"> <i class="fa fa-refresh" aria-hidden="true"></i></button>
+        <button type = "button" class = "refresh_btn" id="card1_refresh" onclick = "flipCard('card1')"> <i class="fa fa-refresh" aria-hidden="true"></i></button>
       </div>
      </div>
  
@@ -35,13 +35,13 @@
       <div class="q-card" id = "card2">
         <h2 class = "q-content" id = "card2-q"> </h2>
         <div class="q-footer" id = "card2-footer">
-          <button class="q-heat-tag" id = "card2-heat"> </a>
-          <button class="q-theme-tag" id = "card2-theme"> </a>
+          <button type = "button" class="q-heat-tag" id = "card2-heat"> </a>
+          <button type = "button" class="q-theme-tag" id = "card2-theme"> </a>
         </div>
       </div>  
       <!-- Card 2 sidebar -->
       <div class= "card-sidebar">
-        <button class = "refresh_btn" id="card2_refresh" onclick = "flipCard('card2')"> <i class="fa fa-refresh" aria-hidden="true"></i></button>
+        <button type = "button" class = "refresh_btn" id="card2_refresh" onclick = "flipCard('card2')"> <i class="fa fa-refresh" aria-hidden="true"></i></button>
       </div>
     </div>
 
@@ -56,10 +56,10 @@
 
 
 </div>
-<button type="button" class="collapsible">Open Filters</button>
+<button type = "button" class="collapsible">Open Filters</button>
 <div class="content">
   <div class = "play-btn-container">    
-    <button class ="play-btn" onclick = "applyFilters()">Apply filters</button>
+    <button type = "button" class ="play-btn" onclick = "applyFilters()">Apply filters</button>
   </div>
 
   <%- include('../partials/filters'); %>

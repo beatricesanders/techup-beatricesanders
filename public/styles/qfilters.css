@@ -1,12 +1,12 @@
 .filter-container {
   display: flex;
-  flex-wrap: row;
   font-size: 30px;
   align-items: flex-start;
 }
 
+
 .filter-inner-container {
-  flex: 30%;
+  flex: 50%;
   display: flex; 
   flex-direction: column; 
   justify-content: center; 
@@ -15,12 +15,30 @@
   margin: 0.5em;
 }
 
-.filter-inner-container h2 {
+.theme-wrapper {
+  margin-left: 2em;
+}
+
+@media (max-width: 800px) {
+  .filter-container {
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  .theme-wrapper {
+    margin-left: 1.5em;
+  }
+
+}
+
+.filter-inner-container h3 {
+  font-size: 24px;
   margin-bottom: 0px; 
 }
 
 .filter-inner-container a {
-  margin-top: 2em; 
+  margin-top: 1em; 
   font-size: 14px; 
 }
 
@@ -48,7 +66,7 @@
     border: 2px solid #dbdad8;
     color: white; 
     background-color: #dbdad8;
-    padding: 14px 28px;
+    padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;  
     cursor: pointer;

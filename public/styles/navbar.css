@@ -1,7 +1,11 @@
 /* Style the header with a grey background and some padding */
 .topnav {
   overflow: hidden;
+  background-color: #f4f3ee; 
   padding: 20px 10px;
+  position: sticky;
+  top: 0;
+  border-bottom: 0.07rem solid grey ;
 }
 
 .topnav-home {

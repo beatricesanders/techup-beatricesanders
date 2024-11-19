@@ -1,18 +1,22 @@
 <!-- Load header -->
 <%- include('../partials/header'); %>
 
-<body>
+<body onload = "run()">
   <!-- Link to table styles -->
   <link href="/styles/list.css" rel="stylesheet" />
 
   <!-- Navbar which can be reused across other pages -->
   <%- include('../partials/navbar'); %>
 
-  <h3>Welcome to the izzyList generator!</h3>
-  <p>
-    Here you can generate a list of ice-breakers based on selected themes and/or
-    heat levels
-  </p>
+  <h2> izzyLists</h2>
+
+  <div class = "about-container">
+    <h3>Welcome to the izzyList generator!</h3>
+    <p>Here you can generate a list of ice-breakers based on selected theme packs, and heat tags.</p>
+  </div>
+
+
+  <div class = "about-container">
 
   <!-- Filters -->
   <%- include('../partials/filters'); %>
@@ -48,23 +52,27 @@
       }
     }
   </script>
-
-<div class = "play-btn-container">    
-  <button onclick="run()" class = "play-btn">Run</button>
 </div>
 
-  <!-- Table -->
-  <table id = "output-table">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>question</th>
-        <th>theme</th>
-        <th>heat</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+<div class = "play-btn-container">    
+  <button type = "button" onclick="run()" class = "play-btn">Run</button>
+</div>
+
+<div class = "about-container" >
+    <!-- Table -->
+    <table class = "output-table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>question</th>
+          <th>theme</th>
+          <th>heat</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+</div>
+
 
 
 </body>

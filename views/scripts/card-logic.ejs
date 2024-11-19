@@ -39,7 +39,7 @@ function changeCard(card_no) {
 
     // Filter database
     var active_db = filterDB(db,"theme") //filter by theme
-    var active_db = filterDB(active_db,"heat") //filter by heat
+    active_db = filterDB(active_db,"heat") //filter by heat
 
     console.log(active_db)
     // first get current card ids 

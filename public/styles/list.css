@@ -1,9 +1,9 @@
-#output-table {
+.output-table {
     border-collapse: collapse;
     width: 100%;
-    margin: 2em; 
+    margin-top: 2em; 
   }
   
-  #output-table tr {
+  .output-table tr {
     border-bottom: 1px solid #ddd;
   }
