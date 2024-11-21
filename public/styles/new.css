@@ -139,6 +139,20 @@ textarea:focus {
   background: white;
 }
 
+
+/* Submit button */
+
+.submit-btn-container {
+  padding-left: 2em; 
+  padding-right: 2em; 
+  flex: 1; 
+  text-align: left; 
+  margin-bottom: 20px;
+  margin-top:20px;
+  margin-left: 14em; 
+}
+
+
 .tip-box {
   font-size:95%;
   margin-left:2em;
@@ -148,7 +162,7 @@ textarea:focus {
   border: .1em solid lightgrey; 
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   textarea {
     font-size: 18px; 
   }
@@ -156,4 +170,10 @@ textarea:focus {
   .form-container {
     flex-direction: column;
   }
+
+  .submit-btn-container {
+    text-align: center; 
+    margin-left: 0px; 
+  }
+
 }
