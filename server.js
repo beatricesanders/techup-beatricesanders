@@ -66,6 +66,11 @@ app.get('/new', function(req, res) {
   res.render('pages/new');
 });
 
+// Sucessful post page
+app.get('/success', function(req, res) {
+  res.render('pages/success');
+});
+
 // Create a new question
 app.post('/new', async function(req, res) {
     
@@ -87,7 +92,7 @@ app.post('/new', async function(req, res) {
           });
 
           // Redirect to homepage upon successful submission 
-          res.redirect('/');
+          res.redirect('/success');
       }
     } catch (error) {
       console.log(error);
