@@ -1,5 +1,14 @@
+<!-- IMPT! This ejs does NOT close the div. When inserting, please remember to include a -->
+<!-- /div tag. This is because the final "Apply Filters" button (which you should also include) -->
+<!-- has different functionality on different pages -->
+
+<!-- Collapsible Button & container -->
+<button type = "button" class="collapsible" >Open Filters</button>
+
+<div class="content">
+
 <!-- Filters -->
-<div class = "about-container" style = "text-align: center; padding-top: 1em">
+<div class = "about-container" style = "text-align: center; padding-top: 1em;">
   <p><em>All filters <span style = "color:#823982; font-weight: 500">selected</span> by default. Click on the relevant card packs or heat tags to de-select, and click again to re-select</em></p>
 </div>
 
@@ -64,10 +73,7 @@
   </div>
 </div>
 
-<div class = "play-btn-container" style = "margin-bottom: 2em">    
-  <button type = "button" class ="play-btn" onclick = "applyFilters()">Apply filters</button>
-</div>
-
+<!-- Filter functionality -->
 <script>
   function toggleActive(target) {
     if (target.classList.contains("active")) {
@@ -103,3 +109,21 @@
     }
   }
 </script>
+
+<!-- Collapsible functionality -->
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("open");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
+  </script>

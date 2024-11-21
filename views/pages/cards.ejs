@@ -7,30 +7,13 @@
   <%- include('../partials/navbar'); %>
 
   <!-- Collapsible Filters -->
-</div>
-<button type = "button" class="collapsible">Open Filters</button>
-<div class="content">
-
   <%- include('../partials/filters'); %>
-</div>
 
-
-<script>
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
+  <div class = "play-btn-container" style = "margin-bottom: 2em">    
+    <button type = "button" class ="play-btn" onclick = "applyFilters()">Apply filters</button>
+  </div>
   
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("open");
-      var content = this.nextElementSibling;
-      if (content.style.maxHeight){
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    });
-  }
-  </script>
+  </div> <!-- close collapsible div MUST INCLUDE WITH filters.ejs -->
 
   <!-- Cards -->
 

@@ -17,10 +17,14 @@
     <p>Here you can generate a list of ice-breakers based on selected theme packs, and heat tags.</p>
   </div>
 
-
-
-  <!-- Filters -->
+<!-- Collapsible Filters -->
   <%- include('../partials/filters'); %>
+
+  <div class = "play-btn-container" style = "margin-bottom: 2em">    
+    <button type = "button" class ="play-btn" onclick = "run()">Apply filters</button>
+  </div>
+
+</div> <!-- close collapsible div MUST INCLUDE WITH filters.ejs -->
 
   <!-- Load DB logic -->
   <%- include('../scripts/db-logic'); %>
@@ -67,7 +71,8 @@
     }
   </script>
 
-<div class = "about-container" style = "margin-right:2em" >
+<!-- Output Table -->
+<div class = "about-container" style = "margin-right:2em; margin-top: 1em;" >
     <!-- Table -->
     <table class = "output-table">
       <thead>
