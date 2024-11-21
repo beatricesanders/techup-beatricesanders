@@ -2,10 +2,25 @@ table {
     border-collapse: collapse;
     width: 100%;
     padding: 2em; 
+    font-size: 15px; 
   }
   
 td, th {
     text-align: left;
     padding: 5px 10px 5px 10px; 
   }
+
+
+  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 800px) {
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em; 
+    padding-right: 1em; 
+    font-size: 12px; 
+  }
+
+}
   
